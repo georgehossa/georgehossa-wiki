@@ -10,12 +10,16 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: false
+          fetch-depth: 0
       - name: change_config
         run: |
           git config user.email "${{ secrets.EMAIL }}"
           git config user.name "${{ secrets.NAME }}"
           git remote remove origin
-          git remote add origin https://${{ secrets.API_KEY }}@github.com/georgehossa/georgehossa.wiki.git
+          git remote add origin https://georgehossa:${{ secrets.GITHUB_TOKEN }}@github.com/georgehossa/georgehossa.wiki.git
           git push origin master
 
 
