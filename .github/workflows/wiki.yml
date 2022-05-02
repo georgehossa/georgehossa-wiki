@@ -11,8 +11,8 @@ jobs:
     steps:
       - name: change_config
         run: |
-          git config user email "${{ secrets.EMAIL }}"
-          git config user name "${{ secrets.NAME }}"
+          git config user.email "${{ secrets.EMAIL }}"
+          git config user.name "${{ secrets.NAME }}"
           git remote remove origin
           git remote add origin https://${{ secrets.API_KEY }}@github.com/georgehossa/georgehossa.wiki.git
           git push origin master
