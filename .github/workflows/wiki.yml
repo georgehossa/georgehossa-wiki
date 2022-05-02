@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: change_config
         run: |
-          echo "We are going to change the config"
+          echo "${{ secrets.GITHUB_TOKEN }}"
 
 
