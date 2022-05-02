@@ -1,0 +1,16 @@
+name: Update Wiki
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update_wiki:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: change_config
+        run: |
+          echo "We are going to change the config"
+
+
